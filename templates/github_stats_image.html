@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Stats Image</title>
+    <script>
+        // <!-- Enable theme identification -->
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.querySelector('body').style.backgroundColor = '#0d1117';
+            document.querySelector('h1').style.color = '#ffffff';
+        } else {
+            document.querySelector('body').style.backgroundColor = '#ffffff';
+            document.querySelector('h1').style.color = '#000000';
+        }
+    </script>
+</head>
+<body>
+    <h1>GitHub Stats Image</h1>
+    <img id="githubStatsImage" src="/loading.gif" alt="Loading...">
+    
+    <script>
+        // Use JavaScript to dynamically update the image source
+        window.onload = function() {
+            var image = document.getElementById('githubStatsImage');
+            const url = new URL(window.location.href);
+            image.src = "/{{ repo }}";
+            image.alt = "GitHub Release Plot for {{ repo }}";
+        };
+    </script>
+</body>
+</html>
