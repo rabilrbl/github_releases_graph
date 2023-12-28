@@ -13,8 +13,8 @@ This project provides a simple web application that visualizes download statisti
 1. **Clone the Repository**
 
     ```bash
-    git clone https://github.com/your_username/your_repository.git
-    cd your_repository
+    git clone https://github.com/rabilrbl/github_releases_plotter.git
+    cd github_releases_plotter
     ```
 
 2. **Install Dependencies**
