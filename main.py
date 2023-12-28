@@ -55,7 +55,7 @@ def github_stats(owner, repo_name):
         # Create a legend for the color-coded file names
         legend_labels = [f"{e[0]} - [{z}] : {e[1]}" for e, z in zip(enumerate(files, 1), download_counts)]
         plt.legend(bars, legend_labels, loc='upper left', bbox_to_anchor=(1,1))
-        plt.xticks(range(len(files)))
+        plt.xticks(range(1, len(files)+1))
 
         # Save the plot as an image in memory
         img_buffer = BytesIO()
