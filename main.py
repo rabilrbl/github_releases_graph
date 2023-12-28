@@ -59,7 +59,7 @@ def github_stats(owner, repo_name):
 
         # Save the plot as an image in memory
         img_buffer = BytesIO()
-        plt.savefig(img_buffer, format='png', bbox_inches='tight', transparent=True)
+        plt.savefig(img_buffer, format='png', bbox_inches='tight', transparent=True, pad_inches=0.2)
         img_buffer.seek(0)
 
         # Return the image as a response
