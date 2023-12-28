@@ -6,6 +6,10 @@ from io import BytesIO
 
 app = Flask(__name__)
 
+@app.route('/')
+def index():
+    return render_template('index.html')
+
 # Define a route to serve the static file
 @app.route('/loading.gif')
 def serve_loading_gif():

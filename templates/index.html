@@ -18,16 +18,11 @@
 </head>
 <body>
     <h1>GitHub Stats Image</h1>
-    <img id="githubStatsImage" src="/loading.gif" alt="Loading...">
-    
-    <script>
-        // Use JavaScript to dynamically update the image source
-        window.onload = function() {
-            var image = document.getElementById('githubStatsImage');
-            const url = new URL(window.location.href);
-            image.src = "/{{ repo }}";
-            image.alt = "GitHub Release Plot for {{ repo }}";
-        };
-    </script>
+    <form action="/{{ repo }}" method="get">
+        <label for="repo">Repository:</label>
+        <input type="text" id="repo" name="repo" value="{{ repo }}" placeholder="owner/repo" required>
+        <input type="text" id="tag" name="tag" value="{{ tag }}" placeholder="tag">
+        <input type="submit" value="Submit">
+    </form>
 </body>
 </html>
