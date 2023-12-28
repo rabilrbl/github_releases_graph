@@ -18,11 +18,20 @@
 </head>
 <body>
     <h1>GitHub Stats Image</h1>
-    <form action="/{{ repo }}" method="get">
+    <form id="form">
         <label for="repo">Repository:</label>
-        <input type="text" id="repo" name="repo" value="{{ repo }}" placeholder="owner/repo" required>
-        <input type="text" id="tag" name="tag" value="{{ tag }}" placeholder="tag">
+        <input type="text" id="repo" name="repo" placeholder="owner/repo" required>
+        <input type="text" id="tag" name="tag" placeholder="tag">
         <input type="submit" value="Submit">
     </form>
+    <script>
+        const form = document.getElementById('form');
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const repo = document.getElementById('repo').value;
+            const tag = document.getElementById('tag').value;
+            window.location.href = `/${repo}?tag=${tag}`;
+        });
+    </script>
 </body>
 </html>
