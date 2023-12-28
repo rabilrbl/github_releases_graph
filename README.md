@@ -48,6 +48,10 @@ This project provides a simple web application that visualizes download statisti
 
 ## Functionality
 
+- **`/`**
+
+  - Renders a form for entering a GitHub repository details.
+
 - **`/<owner>/<repo_name>`**
   
   - Retrieves GitHub release data for a specified repository and generates a bar graph visualizing download counts of release files.
