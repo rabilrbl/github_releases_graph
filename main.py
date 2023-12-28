@@ -47,13 +47,13 @@ def github_stats(owner, repo_name):
         colors = colormaps['viridis'].resampled(len(files))
         
         # Plot the bar graph with distinct colors
-        bars = plt.bar(range(len(files)), download_counts, color=[color for color in colors(range(len(files)))])
+        bars = plt.bar(range(1, len(files)+1), download_counts, color=[color for color in colors(range(len(files)))])
         plt.xlabel("File Index")  # Index used instead of file names
         plt.ylabel("Download Count")
         plt.title("Download Counts for Release Files")
 
         # Create a legend for the color-coded file names
-        legend_labels = [f"{e[0]} - [{z}] : {e[1]}" for e, z in zip(enumerate(files), download_counts)]
+        legend_labels = [f"{e[0]+1} - [{z}] : {e[1]}" for e, z in zip(enumerate(files), download_counts)]
         plt.legend(bars, legend_labels, loc='upper left', bbox_to_anchor=(1,1))
         plt.xticks(range(len(files)))
 
