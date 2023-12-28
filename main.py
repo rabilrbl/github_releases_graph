@@ -24,7 +24,7 @@ def github_stats(owner, repo_name):
     # Get the GitHub release ID from the query parameter (default to "latest" if not specified)
     release_id = request.args.get('tag')
     
-    if release_id is None:
+    if release_id is None or release_id == "":
         release_id = "latest"
     else:
         release_id = f"tags/{release_id}"
